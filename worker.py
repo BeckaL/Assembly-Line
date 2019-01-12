@@ -1,11 +1,10 @@
 class Worker:
 
-    def __init__(self, position):
+    def __init__(self):
         self.components = []
         self.collecting_mode = True
         self.widgets = None
         self.manufacturing_time = 4
-        self.position = position
 
     def store_component(self, object):
         self.components.append(object)
@@ -18,8 +17,8 @@ class Worker:
         elif not self.collecting_mode:
             self.manufacturing_time -= 1
 
-    def place_widget(self, widget, assembly_line):
+    def place_widget(self, assembly_line, position):
+        assembly_line.add(self.widgets, position)
         self.widgets = None
         self.manufacturing_time = 4
         self.components = []
-        assembly_line.add(widget, self.position)

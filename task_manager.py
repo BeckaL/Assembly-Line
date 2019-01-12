@@ -9,7 +9,7 @@ class Task_Manager():
          self.workers = self.assign_workers()
 
     def assign_workers(self):
-        return [[self.worker(i), self.worker(i)] for i in range(len(self.assembly_line.belt))]
+        return [[self.worker(), self.worker()] for i in range(len(self.assembly_line.belt))]
 
     def try_worker_with_component(self, type, worker, idx):
         if not type in worker.components:
@@ -26,7 +26,7 @@ class Task_Manager():
     def attempt_widget_placement(self, pair, idx):
         for worker in pair:
             if worker.widgets:
-                worker.place_widget(worker.widgets, self.assembly_line)
+                worker.place_widget(self.assembly_line, idx)
                 return
 
     def time_pass(self, randint):

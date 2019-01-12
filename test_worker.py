@@ -3,7 +3,7 @@ from doubles import ObjectDouble, allow
 from assembly_line import Assembly_Line
 
 al = ObjectDouble(Assembly_Line)
-w = Worker(0)
+w = Worker()
 
 def test_worker_initializes_with_no_components():
     assert w.components == []
@@ -22,7 +22,7 @@ def test_worker_with_two_components_not_in_collecting_mode():
     w.store_component('B')
     assert not w.collecting_mode
 
-w2 = Worker(0)
+w2 = Worker()
 
 def test_worker_makes_widget_in_four_time_units():
     w2.store_component('A')
@@ -33,7 +33,7 @@ def test_worker_makes_widget_in_four_time_units():
 
 def test_worker_places_widget_on_production_line():
     allow(al).add('X', 0)
-    w2.place_widget('X', al)
+    w2.place_widget(al, 0)
     assert w2.widgets == None
     assert w2.manufacturing_time == 4
     assert w2.components == []
