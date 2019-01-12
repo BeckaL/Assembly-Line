@@ -1,9 +1,9 @@
-## The Challenge
+# The Challenge
 
 This is a programme to compute, given n number of iterations, how many widgets can be produced on a production line. See the end for a full description.
 
 
-### Running the code, tests and working on the code
+# Running the code, tests and working on the code
 
 ## Before doing anything:
 
@@ -29,7 +29,7 @@ The second member of a pair will only perform an action if the first member cann
 
 If a worker can perform an action, they will. This means that the first pair will always be the busiest pair, and subsequent pairs will only be used when the first pair cannot perform an action.
 
-### Structure and approach 
+# Structure and approach
 
 In completing this challenge, I stuck to principles of :
 
