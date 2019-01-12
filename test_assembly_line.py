@@ -24,3 +24,8 @@ def test_time_unit_produces_new_component_in_slot_1():
 def test_time_unit_keeps_belt_length_the_same():
     al.progress_time()
     assert len(al.belt) == 3
+
+def test_widget_count_increases():
+    al.belt[2] = 'X'
+    al.progress_time()
+    assert al.widgets_count == 1
