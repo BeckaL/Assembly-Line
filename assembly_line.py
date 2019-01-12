@@ -23,3 +23,6 @@ class Assembly_Line:
 
     def add(self, item, position):
         self.belt[position] = item
+
+    def remove(self, position):
+        self.belt[position] = None
