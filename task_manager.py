@@ -6,10 +6,7 @@ class Task_Manager():
     def __init__(self, assembly_line = Assembly_Line(), worker = Worker):
          self.assembly_line = assembly_line
          self.worker = worker
-         self.workers = self.assign_workers()
-
-    def assign_workers(self):
-        return [[self.worker(), self.worker()] for i in range(len(self.assembly_line.belt))]
+         self.workers = [[self.worker(), self.worker()] for i in range(len(self.assembly_line.belt))]
 
     def try_worker_with_component(self, type, worker, idx):
         if not type in worker.components:
