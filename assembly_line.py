@@ -15,9 +15,11 @@ class Assembly_Line:
 
     def progress_time(self, randint = None):
         self.belt.insert(0, self.new_component(randint))
-        last_item = self.belt.pop()
-        self.widget_check(last_item)
+        self._widget_check(self.belt.pop())
 
-    def widget_check(self, item):
+    def _widget_check(self, item):
         if item == 'X':
             self.widgets_count += 1
+
+    def add(self, item, position):
+        self.belt[position] = item

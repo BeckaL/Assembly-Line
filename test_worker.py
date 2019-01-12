@@ -35,7 +35,7 @@ def test_worker_makes_widget_in_four_time_units():
     assert w2.widgets == 'X'
 
 def test_worker_places_widget_on_production_line():
-    allow(al).add('X')
+    allow(al).add('X', 0)
     w2.place_widget('X')
     assert w2.widgets == None
     assert w2.manufacturing_time == 4

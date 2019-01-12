@@ -29,3 +29,7 @@ def test_widget_count_increases():
     al.belt[2] = 'X'
     al.progress_time()
     assert al.widgets_count == 1
+
+def test_widget_added_to_line():
+    al.add('X', 0)
+    assert al.belt[0] == 'X'
