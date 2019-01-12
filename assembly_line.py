@@ -13,7 +13,7 @@ class Assembly_Line:
             random_n = randint()
         return components[random_n]
 
-    def progress_time(self, randint = None):
+    def time_pass(self, randint = None):
         self.belt.insert(0, self.new_component(randint))
         self._widget_check(self.belt.pop())
 

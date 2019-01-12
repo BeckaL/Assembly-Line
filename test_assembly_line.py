@@ -18,16 +18,16 @@ def test_item_generator_generates_components():
     assert al.new_component(randint = patched_randints) == 'A'
 
 def test_time_unit_produces_new_component_in_slot_1():
-    al.progress_time(randint = patched_randints)
+    al.time_pass(randint = patched_randints)
     assert al.belt[0] == 'A'
 
 def test_time_unit_keeps_belt_length_the_same():
-    al.progress_time()
+    al.time_pass()
     assert len(al.belt) == 3
 
 def test_widget_count_increases():
     al.belt[2] = 'X'
-    al.progress_time()
+    al.time_pass()
     assert al.widgets_count == 1
 
 def test_widget_added_to_line():
